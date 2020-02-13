@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=houdini
+Comment=start Houdini
+Exec=bash -c '"$(dirname "$1")"/start_houdini.sh'  dummy %k
+Icon=/opt/hfs17.5/houdini_logo.png
+Terminal=true
