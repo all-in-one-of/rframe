@@ -72,11 +72,13 @@ RUN curl -O -L https://github.com/OpenImageIO/oiio/archive/${OPENIMAGEIO_VER}.ta
 
 ENV PYTHONPATH=/opt/oiio/"oiio-${OPENIMAGEIO_VER}"/build/lib/python/site-packages
 
-RUN pip3 install jupyter
+RUN pip3 install jupyter scipy matplotlib
 ENV JUPYTER_PATH="${JUPYTER_PATH}:${PYTHONPATH}"
 RUN echo $JUPYTER_PATH
+
+
 #ENV JUPYTER_PATH=$PYTHONPATH
 EXPOSE 8888
-WORKDIR /
+WORKDIR /env2/Projects/rFrame/rframe
 CMD ["/bin/bash", "-c", "jupyter notebook --ip 0.0.0.0 --no-browser --allow-root"]
 
